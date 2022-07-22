@@ -1,0 +1,77 @@
+@import '../../style/variables.scss';
+
+.header {
+        position: fixed;
+        z-index: 100;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        min-height: 50px;
+        padding: 10px 0px;
+        background: $white; 
+        box-shadow: rgb(0 17 51 / 10%) 0px 0px 15px 0px;
+    &__content{
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__logo-currency {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo{
+        margin: 0px 15px 0px 0px;
+    }
+    &__currency{
+        
+    }
+}
+
+.logo {
+    &__link{
+    }
+    &__img {
+        height: 65px;
+    }
+}
+
+.currency{
+    color: $black;
+    &__item{
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+        font-size: 14px;
+        line-height: 13px;
+    }
+    
+    &__item-name{
+        min-width: 30px;
+        margin-right: 20px;
+        font-weight: 700;
+    }
+
+    &__item-value {
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+            margin-right: 5px;
+        }
+        span {
+            margin-right: 4px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .logo__img {
+        height: 50px;
+    }
+    .header {
+        padding: 5px 0px;
+    }
+}
