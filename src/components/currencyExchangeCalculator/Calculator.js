@@ -55,11 +55,6 @@ function Calculator() {
         return e;
     }
 
-    const handleSwapCurrencies = () => {
-        setFromCurrency(toCurrency)
-        setToCurrency(fromCurrency)
-    }
-
     return (
         <section className='convert-currency'>
             <div className='container'>
