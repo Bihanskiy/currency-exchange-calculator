@@ -1,17 +1,16 @@
-import SelectDropdown from '../selectDropdown/SelectDropdown.js'
-
 import './currencyRow.scss'
 
 const CurrencyRow = (props) => {
     const {
         color,
+        backgroundColor,
         labelName,
         selectedCurrency,
         onChangeCurrency,
         onChangeAmount,
         amount,
+        currencyOptions
     } = props;
-
     return (
         <>
             <div className={`field-currency field-currency__${color}`}>
@@ -25,7 +24,18 @@ const CurrencyRow = (props) => {
                             onChange={onChangeAmount}
                         />
                     </div>
-                    <SelectDropdown color={color} selectedCurrency={selectedCurrency} onChangeCurrency={onChangeCurrency} />
+                    <div className="field-currency__input-select base-select" style={{borderColor:color}}>
+                        <select
+                            value={selectedCurrency}
+                            onChange={onChangeCurrency}
+                            className={`base-select__field bg-image__${color}`}
+                            style={{ color: color, backgroundColor: backgroundColor }}
+                        >
+                            {currencyOptions.map(option => (
+                                <option key={option} value={option}>{option}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
             </div>
         </>

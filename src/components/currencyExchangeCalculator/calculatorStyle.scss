@@ -44,11 +44,41 @@
         flex: 1 1 50%;
         max-width: 50%;
     }
+
+    // .convert-currency__swap
+
+    &__swap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 56px;
+        height: 56px;
+        cursor: pointer;
+        background-color: $white-blue;
+        transition: background-color 0.3s;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border: none;
+        &:hover {
+            background-color: #1cb7d6;
+        }
+    }
+
+    // .convert-currency__swap-icon
+
+    
 }
 
-
-
-.base-title {
+@media only screen and (max-width: 767.98px) {
+    .convert-currency__swap {
+        top: 0;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) rotate(90deg);
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
 }
 
 @media only screen and (max-width: 767.98px) {

@@ -14,6 +14,11 @@ const useCurrencyService = () => {
         return _transformCurrencyRateOll(res.rates, oneCurrency, secondCurrency);
     }
 
+    const getCurrencyOll = async () => {
+        const res = await request(`https://cdn.cur.su/api/nbu.json`);
+        return _transformCurrencyInArr(res.rates);
+    }
+
     const _transformCurrencyRateUah = (items, names) => {
         const rateUah = items.UAH;
         return names.reduce((acc, name) => {
@@ -31,7 +36,11 @@ const useCurrencyService = () => {
         return  rateOne / rateSecond;
     }
 
-    return { loading, error, clearError, getExchangeRate, getExchangeConversionRate }
+    const _transformCurrencyInArr = (currency) => {
+        return Object.keys(currency);
+    }
+
+    return { loading, error, clearError, getExchangeRate, getExchangeConversionRate, getCurrencyOll }
 }
 
 export default useCurrencyService;
