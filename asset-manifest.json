@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/currency-exchange-calculator/static/css/main.3833a456.css",
-    "main.js": "/currency-exchange-calculator/static/js/main.2b2d6602.js",
+    "main.css": "/currency-exchange-calculator/static/css/main.67253f9d.css",
+    "main.js": "/currency-exchange-calculator/static/js/main.f8fe0077.js",
     "static/media/error.gif": "/currency-exchange-calculator/static/media/error.b52e9354519ff3abce32.gif",
-    "static/media/Spinner-loading.gif": "/currency-exchange-calculator/static/media/Spinner-loading.dd75555558cfa0731f7c.gif",
     "static/media/currency-logo.svg": "/currency-exchange-calculator/static/media/currency-logo.3ffcd7602c40dc1f7571d6925457a2db.svg",
     "index.html": "/currency-exchange-calculator/index.html",
-    "main.3833a456.css.map": "/currency-exchange-calculator/static/css/main.3833a456.css.map",
-    "main.2b2d6602.js.map": "/currency-exchange-calculator/static/js/main.2b2d6602.js.map"
+    "main.67253f9d.css.map": "/currency-exchange-calculator/static/css/main.67253f9d.css.map",
+    "main.f8fe0077.js.map": "/currency-exchange-calculator/static/js/main.f8fe0077.js.map"
   },
   "entrypoints": [
-    "static/css/main.3833a456.css",
-    "static/js/main.2b2d6602.js"
+    "static/css/main.67253f9d.css",
+    "static/js/main.f8fe0077.js"
   ]
 }
