@@ -1,17 +1,21 @@
 import AppHeader from "../appHeader/AppHeader";
+import CurrencyProvider from '../currencyContext/CurrencyProvider';
 import Calculator from "../currencyExchangeCalculator/Calculator";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 
+
 function App() {
   return (
-    <div className="app">
-      <AppHeader />
-      <main>
-        <ErrorBoundary>
-          <Calculator />
-        </ErrorBoundary>
-      </main>
-    </div>
+    <ErrorBoundary>
+      <CurrencyProvider>
+        <div className="app">
+          <AppHeader />
+          <main>
+              <Calculator />
+          </main>
+        </div>
+      </CurrencyProvider>
+    </ErrorBoundary>
   );
 }
 

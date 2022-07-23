@@ -19,6 +19,7 @@ const CurrencyRow = (props) => {
                     <div className="currency-input field-currency__input-text">
                         <input
                             type="number"
+                            maxLength={'7'}
                             className="currency-input__input"
                             value={amount}
                             onChange={onChangeAmount}

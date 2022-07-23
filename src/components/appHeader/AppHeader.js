@@ -1,29 +1,19 @@
 import { useEffect, useState } from 'react';
 
-import useCurrencyService from '../../services/CurrencyService';
-import ErrorMessage from '../errorMessage/ErrorMessage';
-import Spinner from '../spinner/spinner';
+import { useUAHExchangeRate } from '../currencyContext/hooks';
 
 import './appHeader.scss';
 import logo from '../../assets/images/currency-logo.svg'
 
 
 const AppHeader = () => {
+    const exchangeRateUAH = useUAHExchangeRate(['USD', 'EUR'])
+
     const [currensyItems, setCurrensyItems] = useState([]);
-    const { loading, error, getExchangeRate } = useCurrencyService();
 
     useEffect(() => {
-        onRequest(['USD', 'EUR'])
+        setCurrensyItems(exchangeRateUAH)
     }, [])
-
-    const onRequest = (currencyNames) => {
-        getExchangeRate(currencyNames)
-            .then(onCurencyListLoaded)
-    }
-
-    const onCurencyListLoaded = (newCurrencyList) => {
-        setCurrensyItems([...newCurrencyList]);
-    }
 
     function renderCurrencyExchange(arr) {
         return arr.map((item, i) => {
@@ -40,9 +30,6 @@ const AppHeader = () => {
 
     const items = renderCurrencyExchange(currensyItems);
 
-    const errorMessage = !loading && error ? <ErrorMessage /> : null;
-    const spinner = loading ? <Spinner /> : null;
-    const exchangeRate = !error && !loading ? items : null
     return (
         <header className="header">
             <div className='header__container container'>
@@ -54,9 +41,7 @@ const AppHeader = () => {
                             </a>
                         </div>
                         <div className="currency header__currency">
-                            {errorMessage}
-                            {spinner}
-                            {exchangeRate}
+                            {items}
                         </div>
                     </div>
                 </div>
